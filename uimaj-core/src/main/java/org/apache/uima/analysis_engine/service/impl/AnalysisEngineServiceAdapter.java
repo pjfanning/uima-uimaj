@@ -49,8 +49,6 @@ import org.apache.uima.util.UimaTimer;
  * method, which must create an {@link AnalysisEngineServiceStub} object that can communicate with
  * the remote service. The stub must be passed to the {@link #setStub(AnalysisEngineServiceStub)}
  * method of this class.
- * 
- * 
  */
 public abstract class AnalysisEngineServiceAdapter extends AnalysisEngineImplBase
         implements TextAnalysisEngine, CasConsumer {
@@ -116,8 +114,9 @@ public abstract class AnalysisEngineServiceAdapter extends AnalysisEngineImplBas
    */
   @Override
   public void destroy() {
-    if (getStub() != null)
+    if (getStub() != null) {
       getStub().destroy();
+    }
     super.destroy();
   }
 

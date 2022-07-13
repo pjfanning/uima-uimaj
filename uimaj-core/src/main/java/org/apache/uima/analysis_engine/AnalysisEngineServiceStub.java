@@ -43,7 +43,9 @@ public interface AnalysisEngineServiceStub extends ResourceServiceStub {
    * @throws ResourceServiceException
    *           tbd
    */
-  void callBatchProcessComplete() throws ResourceServiceException;
+  default void callBatchProcessComplete() throws ResourceServiceException {
+    // No action by default.
+  }
 
   /**
    * Performs service call to inform the AnalysisEngine that the processing of a collection has been
@@ -52,5 +54,7 @@ public interface AnalysisEngineServiceStub extends ResourceServiceStub {
    * @throws ResourceServiceException
    *           tbd
    */
-  void callCollectionProcessComplete() throws ResourceServiceException;
+  default void callCollectionProcessComplete() throws ResourceServiceException {
+    // No action by default.
+  }
 }
